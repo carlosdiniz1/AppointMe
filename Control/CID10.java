@@ -1,4 +1,4 @@
-public class CID10 {
+﻿public class CID10 {
 
 	private char CodCID;
 
@@ -13,3 +13,5 @@ public class CID10 {
 	}
 
 }
+
+//try coment
