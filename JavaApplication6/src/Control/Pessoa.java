@@ -10,29 +10,49 @@ package Control;
  * @author carlos.diniz
  */
 public abstract class Pessoa {
-    private String nome;
+    public String nome;
 
-    private String endereço;
 
-    private String dataNascimento;
+    public String dataNascimento;
 
-    private String telefone;
+    public String telefone;
+    
+    public String cpf;
 
-    public abstract String getNome();
+    public String getNome() {
+        return nome;
+    }
 
-    public abstract void setNome(String nome);
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-    public abstract String getEndereço();
+    
+    public String getDataNascimento() {
+        return dataNascimento;
+    }
 
-    public abstract void setEndereço(String endereço);
+    public void setDataNascimento(String dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
 
-    public abstract String getDataNascimento();
+    public String getTelefone() {
+        return telefone;
+    }
 
-    public abstract void setDataNascimento(String dataNascimento);
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
 
-    public abstract String getTelefone();
+    public String getCpf() {
+        return cpf;
+    }
 
-    public abstract void setTelefone(String telefone);
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    
     
 
     public abstract boolean Alterar();

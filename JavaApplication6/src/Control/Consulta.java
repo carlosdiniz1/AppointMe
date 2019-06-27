@@ -20,6 +20,8 @@ public class Consulta {
     private String CPFConsulta;
 
     private String CRMConsulta;
+    
+    private String Relatório;
 
     public String getHoraInicio() {
         return horaInicio;

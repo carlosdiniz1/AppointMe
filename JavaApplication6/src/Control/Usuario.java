@@ -16,22 +16,37 @@ public abstract class Usuario extends Pessoa{
     private String senha;
     private boolean ativo;
 
-    public abstract int getNivelUsuario();
+    public int getNivelUsuario() {
+        return nivelUsuario;
+    }
 
-    public abstract void setNivelUsuario(int nivelUsuario);
+    public void setNivelUsuario(int nivelUsuario) {
+        this.nivelUsuario = nivelUsuario;
+    }
 
-    public abstract String getLogin();
+    public String getLogin() {
+        return login;
+    }
 
-    public abstract void setLogin(String login);
+    public void setLogin(String login) {
+        this.login = login;
+    }
 
-    public abstract String getSenha();
+    public String getSenha() {
+        return senha;
+    }
 
-    public abstract void setSenha(String senha);
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
 
-    public abstract boolean isAtivo();
+    public boolean isAtivo() {
+        return ativo;
+    }
 
-    public abstract void setAtivo(boolean ativo);
-    
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
+    }
     
     
     
