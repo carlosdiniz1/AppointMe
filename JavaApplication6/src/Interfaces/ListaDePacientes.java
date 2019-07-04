@@ -5,17 +5,29 @@
  */
 package Interfaces;
 
+import Control.Paciente;
+import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.String;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.AbstractListModel;
+import javax.swing.DefaultListModel;
+import javax.swing.GroupLayout;
+
 /**
  *
  * @author carlos.diniz
  */
-public class ListaDeConsultas extends javax.swing.JPanel {
+public class ListaDePacientes extends javax.swing.JPanel {
+    public List<Paciente> pacientes;
+    public Paciente paciente1 = new Paciente("carlos", "08/12/1996", "43996683272", "1234567890123");
 
     /**
      * Creates new form ListaDePacientes
      */
-    public ListaDeConsultas() {
+    public ListaDePacientes() {
         initComponents();
+        IniciaListaPacientes();
     }
 
     /**
@@ -28,21 +40,21 @@ public class ListaDeConsultas extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        listaPaciente = new javax.swing.JList<>();
+        Pacientes = new javax.swing.JLabel();
+        buttonNovaConsulta = new javax.swing.JButton();
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        listaPaciente.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane2.setViewportView(jList1);
+        jScrollPane2.setViewportView(listaPaciente);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("Consultas");
+        Pacientes.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        Pacientes.setText("Consultas");
 
-        jButton1.setText("Nova Consulta");
+        buttonNovaConsulta.setText("Nova Consulta");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -52,9 +64,9 @@ public class ListaDeConsultas extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(Pacientes)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 201, Short.MAX_VALUE)
-                        .addComponent(jButton1))
+                        .addComponent(buttonNovaConsulta))
                     .addComponent(jScrollPane2))
                 .addContainerGap())
         );
@@ -63,19 +75,37 @@ public class ListaDeConsultas extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jButton1))
+                    .addComponent(Pacientes)
+                    .addComponent(buttonNovaConsulta))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     *
+     */
+    public void IniciaListaPacientes(){
+        pacientes.add(paciente1);
+        String[] teste = null;
+        DefaultListModel model = new DefaultListModel();
+        for(int i = 0; i<pacientes.size(); i++ ){
+            teste[i]= pacientes.get(i).nome;
+        }
+        model.addElement("Carlos");
+        listaPaciente.setModel(model);
+    }
+
+    
+
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JList<String> jList1;
+    private javax.swing.JLabel Pacientes;
+    private javax.swing.JButton buttonNovaConsulta;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JList<String> listaPaciente;
     // End of variables declaration//GEN-END:variables
 }

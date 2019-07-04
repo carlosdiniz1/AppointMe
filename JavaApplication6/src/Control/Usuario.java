@@ -16,6 +16,10 @@ public abstract class Usuario extends Pessoa{
     private String senha;
     private boolean ativo;
 
+    public Usuario(String nome, String dataNascimento, String telefone, String cpf) {
+        super(nome, dataNascimento, telefone, cpf);
+    }
+
     public int getNivelUsuario() {
         return nivelUsuario;
     }

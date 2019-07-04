@@ -10,6 +10,7 @@ package Control;
  * @author carlos.diniz
  */
 public abstract class Pessoa {
+   
     public String nome;
 
 
@@ -19,6 +20,15 @@ public abstract class Pessoa {
     
     public String cpf;
 
+    public Pessoa(String nome, String dataNascimento, String telefone, String cpf) {
+        this.nome = nome;
+        this.dataNascimento = dataNascimento;
+        this.telefone = telefone;
+        this.cpf = cpf;
+    }
+
+    
+    
     public String getNome() {
         return nome;
     }

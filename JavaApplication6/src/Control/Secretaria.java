@@ -11,6 +11,10 @@ package Control;
  * @author carlos.diniz
  */
 public class Secretaria extends Usuario{
+
+    public Secretaria(String nome, String dataNascimento, String telefone, String cpf) {
+        super(nome, dataNascimento, telefone, cpf);
+    }
     @Override
     public boolean Alterar() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

@@ -15,6 +15,10 @@ public class Medico extends Usuario{
 
     private char especializacao;
 
+    public Medico(String nome, String dataNascimento, String telefone, String cpf) {
+        super(nome, dataNascimento, telefone, cpf);
+    }
+
     public char getCRM() {
         return CRM;
     }

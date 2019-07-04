@@ -10,8 +10,12 @@ package Control;
  * @author carlos.diniz
  */
 public class Paciente extends Pessoa{
-
+    
     private Prontuario prontuario;
+
+    public Paciente(String nome, String dataNascimento, String telefone, String cpf) {
+        super(nome, dataNascimento, telefone, cpf);
+    }
 
     @Override
     public boolean Alterar() {

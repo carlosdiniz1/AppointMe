@@ -5,17 +5,29 @@
  */
 package Interfaces;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author carlos.diniz
  */
-public class TelaInicial extends javax.swing.JPanel {
+public class TelaInicial extends javax.swing.JPanel implements ActionListener{
 
+    
+
+    
     /**
      * Creates new form TelaInicial
      */
     public TelaInicial() {
         initComponents();
+    }
+    public static void main(String args[]){
+        TelaInicial tela = new TelaInicial();
+        tela.initComponents();
+        tela.setVisible(true);
+        
     }
 
     /**
@@ -28,16 +40,16 @@ public class TelaInicial extends javax.swing.JPanel {
     private void initComponents() {
 
         labelAppointMe = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
+        buttonCadastrarConsulta = new javax.swing.JButton();
+        buttonCadastrarMedico = new javax.swing.JButton();
+        buttonCadastrarSecretaria = new javax.swing.JButton();
+        buttonCadastrarPaciente = new javax.swing.JButton();
+        buttonListarConsultasAgendadas = new javax.swing.JButton();
+        buttonBuscarConsulta = new javax.swing.JButton();
+        buttonListarMedicos = new javax.swing.JButton();
+        buttonListarPacientes = new javax.swing.JButton();
+        buttonListarSecretarias = new javax.swing.JButton();
+        buttonRealizarConsulta = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(0, 102, 204));
 
@@ -46,35 +58,86 @@ public class TelaInicial extends javax.swing.JPanel {
         labelAppointMe.setForeground(new java.awt.Color(255, 255, 255));
         labelAppointMe.setText("AppointMe");
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 102));
-        jButton1.setText("Cadastrar Consulta");
+        buttonCadastrarConsulta.setBackground(new java.awt.Color(0, 0, 102));
+        buttonCadastrarConsulta.setText("Cadastrar Consulta");
+        buttonCadastrarConsulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonCadastrarConsultaActionPerformed(evt);
+            }
+        });
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 102));
-        jButton2.setText("Cadastrar Médico");
+        buttonCadastrarMedico.setBackground(new java.awt.Color(0, 0, 102));
+        buttonCadastrarMedico.setText("Cadastrar Médico");
+        buttonCadastrarMedico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonCadastrarMedicoActionPerformed(evt);
+            }
+        });
 
-        jButton3.setBackground(new java.awt.Color(0, 0, 102));
-        jButton3.setText("Cadastrar Secretária");
+        buttonCadastrarSecretaria.setBackground(new java.awt.Color(0, 0, 102));
+        buttonCadastrarSecretaria.setText("Cadastrar Secretária");
+        buttonCadastrarSecretaria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonCadastrarSecretariaActionPerformed(evt);
+            }
+        });
 
-        jButton4.setBackground(new java.awt.Color(0, 0, 102));
-        jButton4.setText("Cadastrar Paciente");
+        buttonCadastrarPaciente.setBackground(new java.awt.Color(0, 0, 102));
+        buttonCadastrarPaciente.setText("CadastrarPaciente");
+        buttonCadastrarPaciente.setActionCommand("");
+        buttonCadastrarPaciente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonCadastrarPacienteActionPerformed(evt);
+            }
+        });
 
-        jButton5.setBackground(new java.awt.Color(0, 0, 102));
-        jButton5.setText("Listar Consultas Agendads");
+        buttonListarConsultasAgendadas.setBackground(new java.awt.Color(0, 0, 102));
+        buttonListarConsultasAgendadas.setText("Listar Consultas Agendads");
+        buttonListarConsultasAgendadas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonListarConsultasAgendadasActionPerformed(evt);
+            }
+        });
 
-        jButton6.setBackground(new java.awt.Color(0, 0, 102));
-        jButton6.setText("Buscar Consulta");
+        buttonBuscarConsulta.setBackground(new java.awt.Color(0, 0, 102));
+        buttonBuscarConsulta.setText("Buscar Consulta");
+        buttonBuscarConsulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonBuscarConsultaActionPerformed(evt);
+            }
+        });
 
-        jButton7.setBackground(new java.awt.Color(0, 0, 102));
-        jButton7.setText("Listar Médicos");
+        buttonListarMedicos.setBackground(new java.awt.Color(0, 0, 102));
+        buttonListarMedicos.setText("Listar Médicos");
+        buttonListarMedicos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonListarMedicosActionPerformed(evt);
+            }
+        });
 
-        jButton8.setBackground(new java.awt.Color(0, 0, 102));
-        jButton8.setText("Listar Pacientes");
+        buttonListarPacientes.setBackground(new java.awt.Color(0, 0, 102));
+        buttonListarPacientes.setText("Listar Pacientes");
+        buttonListarPacientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonListarPacientesActionPerformed(evt);
+            }
+        });
 
-        jButton9.setBackground(new java.awt.Color(0, 0, 102));
-        jButton9.setText("Listar Secretárias");
+        buttonListarSecretarias.setBackground(new java.awt.Color(0, 0, 102));
+        buttonListarSecretarias.setText("Listar Secretárias");
+        buttonListarSecretarias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonListarSecretariasActionPerformed(evt);
+            }
+        });
 
-        jButton10.setBackground(new java.awt.Color(0, 0, 102));
-        jButton10.setText("Realizar Consulta");
+        buttonRealizarConsulta.setBackground(new java.awt.Color(0, 0, 102));
+        buttonRealizarConsulta.setText("Realizar Consulta");
+        buttonRealizarConsulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonRealizarConsultaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -88,18 +151,18 @@ public class TelaInicial extends javax.swing.JPanel {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jButton9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                            .addComponent(buttonListarSecretarias, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(buttonListarMedicos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(buttonListarConsultasAgendadas, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(buttonCadastrarSecretaria, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(buttonCadastrarConsulta, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(buttonCadastrarMedico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(buttonCadastrarPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(buttonBuscarConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(buttonListarPacientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(buttonRealizarConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(49, 49, 49))))
         );
         layout.setVerticalGroup(
@@ -109,40 +172,100 @@ public class TelaInicial extends javax.swing.JPanel {
                 .addComponent(labelAppointMe)
                 .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(buttonCadastrarConsulta)
+                    .addComponent(buttonCadastrarMedico))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(buttonCadastrarSecretaria)
+                    .addComponent(buttonCadastrarPaciente))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton5)
-                    .addComponent(jButton6))
+                    .addComponent(buttonListarConsultasAgendadas)
+                    .addComponent(buttonBuscarConsulta))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton7)
-                    .addComponent(jButton8))
+                    .addComponent(buttonListarMedicos)
+                    .addComponent(buttonListarPacientes))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton9)
-                    .addComponent(jButton10))
+                    .addComponent(buttonListarSecretarias)
+                    .addComponent(buttonRealizarConsulta))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void buttonCadastrarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCadastrarPacienteActionPerformed
+        CadastroDePaciente cadastroDePaciente = new CadastroDePaciente();
+        cadastroDePaciente.setVisible(true);
+        
+    }//GEN-LAST:event_buttonCadastrarPacienteActionPerformed
+
+    private void buttonCadastrarConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCadastrarConsultaActionPerformed
+        CadastroDeConsulta cadastroDeConsulta = new CadastroDeConsulta();
+        cadastroDeConsulta.setVisible(true);
+    }//GEN-LAST:event_buttonCadastrarConsultaActionPerformed
+
+    private void buttonCadastrarMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCadastrarMedicoActionPerformed
+        CadastroDeMedico cadastroDeMedico = new CadastroDeMedico();
+        cadastroDeMedico.setVisible(true);
+    }//GEN-LAST:event_buttonCadastrarMedicoActionPerformed
+
+    private void buttonCadastrarSecretariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCadastrarSecretariaActionPerformed
+        CadastroDeSecretária cadastroDeSecretaria = new CadastroDeSecretária();
+        cadastroDeSecretaria.setVisible(true);
+    }//GEN-LAST:event_buttonCadastrarSecretariaActionPerformed
+
+    private void buttonListarConsultasAgendadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonListarConsultasAgendadasActionPerformed
+        ListaDeConsultas listaDeConsultas = new ListaDeConsultas();
+        listaDeConsultas.setVisible(true);
+    }//GEN-LAST:event_buttonListarConsultasAgendadasActionPerformed
+
+    private void buttonBuscarConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBuscarConsultaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonBuscarConsultaActionPerformed
+
+    private void buttonListarMedicosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonListarMedicosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonListarMedicosActionPerformed
+
+    private void buttonListarPacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonListarPacientesActionPerformed
+       ListaDePacientes listaDePacientes = new ListaDePacientes();
+       listaDePacientes.setVisible(true);
+    }//GEN-LAST:event_buttonListarPacientesActionPerformed
+
+    private void buttonListarSecretariasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonListarSecretariasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonListarSecretariasActionPerformed
+
+    private void buttonRealizarConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRealizarConsultaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonRealizarConsultaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JButton buttonBuscarConsulta;
+    private javax.swing.JButton buttonCadastrarConsulta;
+    private javax.swing.JButton buttonCadastrarMedico;
+    private javax.swing.JButton buttonCadastrarPaciente;
+    private javax.swing.JButton buttonCadastrarSecretaria;
+    private javax.swing.JButton buttonListarConsultasAgendadas;
+    private javax.swing.JButton buttonListarMedicos;
+    private javax.swing.JButton buttonListarPacientes;
+    private javax.swing.JButton buttonListarSecretarias;
+    private javax.swing.JButton buttonRealizarConsulta;
     private javax.swing.JLabel labelAppointMe;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+
+
+   
+   
+    
 }
+
+
