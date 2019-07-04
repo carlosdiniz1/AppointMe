@@ -7,6 +7,11 @@ package Interfaces;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.lang.reflect.InvocationTargetException;
+import static java.time.Clock.system;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -14,7 +19,7 @@ import java.awt.event.ActionListener;
  */
 public class TelaInicial extends javax.swing.JPanel implements ActionListener{
 
-    
+
 
     
     /**
@@ -23,10 +28,20 @@ public class TelaInicial extends javax.swing.JPanel implements ActionListener{
     public TelaInicial() {
         initComponents();
     }
-    public static void main(String args[]){
-        TelaInicial tela = new TelaInicial();
-        tela.initComponents();
-        tela.setVisible(true);
+    
+    public static void main(String args[]) throws InterruptedException, InvocationTargetException{
+        javax.swing.SwingUtilities.invokeAndWait(new Runnable() {
+            @Override
+            public void run() {
+                TelaInicial t = new TelaInicial();
+                t.initComponents();
+               
+                t.setVisible(true);
+            }
+        
+        
+        });
+        System.out.println("Interfaces.TelaInicial.main()");
         
     }
 
@@ -195,8 +210,24 @@ public class TelaInicial extends javax.swing.JPanel implements ActionListener{
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonCadastrarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCadastrarPacienteActionPerformed
-        CadastroDePaciente cadastroDePaciente = new CadastroDePaciente();
-        cadastroDePaciente.setVisible(true);
+        try {
+            javax.swing.SwingUtilities.invokeAndWait(new Runnable() {
+                @Override
+                public void run() {
+                    CadastroDePaciente t = new CadastroDePaciente();
+                    
+                    
+                    t.setVisible(true);
+                }
+                
+                
+            });
+        } catch (InterruptedException ex) {
+            Logger.getLogger(TelaInicial.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InvocationTargetException ex) {
+            Logger.getLogger(TelaInicial.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        System.out.println("Interfaces.TelaInicial.main()");
         
     }//GEN-LAST:event_buttonCadastrarPacienteActionPerformed
 
